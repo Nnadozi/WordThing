@@ -9,7 +9,8 @@ const CreateAccount = () => {
   return (
     <Page>
       <MyText>Create Account</MyText>
-      <MyButton title='Next' onPress={ () => router.push("/(onboard)/Finish")} />
+      <MyButton title='Create' onPress={ () => router.push("/(auth)/Register")} />
+      <MyButton title='Later' onPress={ () => router.push("/(onboard)/Finish")} />
     </Page>
   )
 }

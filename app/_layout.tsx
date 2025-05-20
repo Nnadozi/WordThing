@@ -25,6 +25,7 @@ export default function RootLayout() {
       <Stack screenOptions={{headerShown: false, gestureEnabled:false}}>
         <Stack.Screen name="(onboard)"/>
         <Stack.Screen name="(main)"/>
+        <Stack.Screen name="(auth)"/>
       </Stack>
     </PaperProvider>
   )

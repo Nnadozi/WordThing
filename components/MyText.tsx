@@ -5,18 +5,22 @@ interface MyTextProps {
     children?: React.ReactNode
     style?:TextStyle;
     fontSize?: FontSizeKey;
-    marginvertical?: any;
+    marginVertical?: any;
     bold?: boolean;
     textAlign?: "left" | "right" | "center" | "justify";
+    onPress?: () => void; 
+    color?: string;
 }
 const fontSizes = {small: 12, normal: 16, large: 27, xlarge: 35,};
 type FontSizeKey = keyof typeof fontSizes;
 
-const MyText = ({style, children, fontSize = "normal", marginvertical, bold, textAlign}: MyTextProps) => {
+const MyText = ({style, children, fontSize = "normal", marginVertical, bold, textAlign, onPress, color}: MyTextProps) => {
   return (
-    <Text style = {[style,
-    {fontSize: fontSizes[fontSize], marginVertical: marginvertical, 
-    fontFamily: bold ? "DMSans-Bold" :"DMSans-Regular", textAlign: textAlign,
+    <Text 
+    onPress={onPress}
+    style = {[style,
+    {fontSize: fontSizes[fontSize], marginVertical: marginVertical, 
+    fontFamily: bold ? "DMSans-Bold" :"DMSans-Regular", textAlign: textAlign,color:color
     }]}>
         {children}
     </Text>

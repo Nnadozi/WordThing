@@ -1,11 +1,13 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import MyText from '@/components/MyText';
+import Page from '@/components/Page';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 
 const Register = () => {
   return (
-    <View>
-      <Text>Register</Text>
-    </View>
+    <Page>
+      <MyText bold fontSize='xlarge'>Sign Up</MyText>
+    </Page>
   )
 }
 

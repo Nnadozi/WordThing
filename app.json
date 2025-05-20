@@ -9,9 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "usesAppleSignIn": true
     },
     "android": {
+      "package": "com.nnadozi.termy",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#000000"
@@ -37,16 +39,21 @@
       [
         "expo-font",
         {
-          "fonts": 
-          [
-            "./assets/fonts/DMSans-Bold.ttf.ttf",
-            "./assets/fonts/DMSans-Regular.ttf.ttf"
+          "fonts": [
+            "./assets/fonts/DMSans-Bold.ttf",
+            "./assets/fonts/DMSans-Regular.ttf"
           ]
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a9967123-2723-4c3a-be88-db1497b4faaa"
+      }
     }
   }
 }
