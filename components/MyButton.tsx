@@ -8,11 +8,13 @@ interface MyButtonProps {
     onPress?: () => void
     style?:ViewStyle;
     marginVertical?: any;
+    icon?:string;
 }
 
-const MyButton = ({mode = 'contained', onPress, title, style, marginVertical}: MyButtonProps) => {
+const MyButton = ({mode = 'contained', onPress, title, style, marginVertical, icon}: MyButtonProps) => {
   return (
     <Button
+    icon={icon}
     onPress={onPress}
     mode={mode}
     children={title}

@@ -1,3 +1,4 @@
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { Tabs } from "expo-router";
 import React from "react";
 import { Icon } from "react-native-paper";
@@ -5,6 +6,13 @@ import { Icon } from "react-native-paper";
 export default function MainLayout(){
     return(
         <Tabs screenOptions={{headerTitleAlign: "center",headerTitleStyle: {fontFamily:"DMSans-Bold"}}}>
+            <Tabs.Screen
+            name="Dictionary"
+            options={{
+                tabBarIcon: ({color}) => <Icon source={"book"} color={color} size={26} />,
+                title: "Dictionary",
+            }}
+            />
             <Tabs.Screen 
             name="Home"
             options={{
@@ -12,10 +20,9 @@ export default function MainLayout(){
             }}
             />
             <Tabs.Screen
-            name="Dictionary"
+            name="Profile"
             options={{
-                tabBarIcon: ({color}) => <Icon source={"book"} color={color} size={26} />,
-                title: "My Dictionary",
+                tabBarIcon: ({color}) => <FontAwesome5 color={color} name="user-alt" size={24} />
             }}
             />
         </Tabs>
