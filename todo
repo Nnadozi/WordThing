@@ -1,3 +1,9 @@
 [] = dynamic
 () = group
 - Test number vs percentage based styles
+https://www.reddit.com/r/reactnative/comments/1auzf1v/is_it_possible_to_authenticate_using_googleapple/
+
+Todo:
+- Apple sign in
+- Google sign up
+- Google sign in

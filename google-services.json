@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "633127745699",
+    "project_id": "termy-c3920",
+    "storage_bucket": "termy-c3920.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633127745699:android:c1c73cbae97173073b2716",
+        "android_client_info": {
+          "package_name": "com.nnadozi.termy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633127745699-5meva892if0qr68t6qng0rkaletk9tqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nnadozi.termy",
+            "certificate_hash": "7b62a05140abfd69662d4079873c639be46078a2"
+          }
+        },
+        {
+          "client_id": "633127745699-m2hnpf22msjg191cqjcehes487uoap4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCywtBQiqc5T1b3a40HqANs3qONkxpxuQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633127745699-m2hnpf22msjg191cqjcehes487uoap4m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "633127745699-m3u707sbh2m0po7t7tdj2d3rb6g28p2k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nnadozi.termy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

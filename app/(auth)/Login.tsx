@@ -9,7 +9,7 @@ import { Image, StyleSheet, View } from 'react-native'
 const Login = () => {
   return (
     <Page>
-      <MyIcon size={40} style={styles.icon} type='Ionicons' name={"chevron-back"} onPress={router.back} />
+      <MyIcon size={35} style={styles.icon} type='Ionicons' name={"chevron-back"} onPress={router.back} />
       <Image resizeMode='contain' style={styles.img} source={require('../../assets/images/icon.png')} />
       <MyText fontSize='large' bold >Sign in to Termy</MyText>
       <View style = {styles.buttonColumn}>

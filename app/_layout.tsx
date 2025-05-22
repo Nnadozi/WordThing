@@ -22,7 +22,7 @@ export default function RootLayout() {
 
   return (
     <PaperProvider>
-      <Stack screenOptions={{headerShown: false, gestureEnabled:false}}>
+      <Stack initialRouteName='(onboard)' screenOptions={{headerShown: false, gestureEnabled:false}}>
         <Stack.Screen name="(onboard)"/>
         <Stack.Screen name="(main)"/>
         <Stack.Screen name="(auth)"/>
