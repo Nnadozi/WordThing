@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from "react";
 import { PaperProvider } from "react-native-paper";
+import { UserProvider } from "../context/UserContext";
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -21,12 +22,14 @@ export default function RootLayout() {
   }
 
   return (
-    <PaperProvider>
-      <Stack initialRouteName='(onboard)' screenOptions={{headerShown: false, gestureEnabled:false}}>
-        <Stack.Screen name="(onboard)"/>
-        <Stack.Screen name="(main)"/>
-        <Stack.Screen name="(auth)"/>
-      </Stack>
-    </PaperProvider>
+    <UserProvider>
+      <PaperProvider>
+        <Stack screenOptions={{headerShown: false, gestureEnabled:false}}>
+          <Stack.Screen name="(onboard)"/>
+          <Stack.Screen name="(main)"/>
+          <Stack.Screen name="(auth)"/>
+        </Stack>
+      </PaperProvider>
+    </UserProvider>
   )
 }

@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "633127745699-5meva892if0qr68t6qng0rkaletk9tqn.apps.googleusercontent.com",
+          "client_id": "633127745699-a9p2anfn11njdr8o3t4crilqlehsvdfe.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nnadozi.termy",
-            "certificate_hash": "7b62a05140abfd69662d4079873c639be46078a2"
+            "certificate_hash": "30cd7fa702fcdbd8812dd6822e6e437760da0b68"
           }
         },
         {

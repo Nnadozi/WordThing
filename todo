@@ -1,4 +1,5 @@
 Todo:
+- Follow guide
 - Test number vs percentage based styles
-- Fix android crashing
-- Start firestore (actual account structure)
+- Fix android auth (apple not work, android not prompting to choose email)
+- Try Google Jules

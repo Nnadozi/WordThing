@@ -11,7 +11,6 @@ import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 
 const db = getFirestore();
-
 GoogleSignin.configure({
   webClientId: '633127745699-m2hnpf22msjg191cqjcehes487uoap4m.apps.googleusercontent.com',
 })
@@ -29,7 +28,7 @@ async function signUpWithGoogle() {
     // ✅ Step 5: Use credential to sign in with Firebase
     const userCredential = await signInWithCredential(getAuth(), googleCredential);
     const user = userCredential.user;
-    console.log("✅ Google Sign-Up complete:",  user.email);
+    console.log("✅ Google Sign-up complete:",  user.email);
     // ✅ Now safely write to Firestore
     await setDoc(doc(db, 'users', user.uid), {
       id: user.uid,
@@ -67,7 +66,6 @@ async function signUpWithApple() {
   });
   // ✅ Step 2: Check if the identity token is returned
   if (!appleAuthRequestResponse.identityToken) {
-    // This happens if the user cancels or something goes wrong
     throw new Error('Apple Sign-Up failed - no identify token returned');
   }
   // ✅ Step 3: Extract the identity token and nonce
@@ -82,7 +80,7 @@ async function signUpWithApple() {
   await setDoc(doc(db, 'users', user.uid), {
     id: user.uid,
     email: user.email,
-    accountType: 'google',
+    accountType: 'apple',
     createdAt: serverTimestamp(),
   });
   } catch (error:any) {

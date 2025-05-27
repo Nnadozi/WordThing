@@ -18,23 +18,16 @@ async function signInWithGoogle() {
   try {
     // ✅ Step 1: Check if device has Google Play Services. Show a dialog if the services are not available.
     await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-
     // ✅ Step 2: Prompt the user to select a Google account and sign in
     const userInfo = await GoogleSignin.signIn();
-
     // ✅ Step 3: Retrieve the ID token for authentication with Firebase
     const { idToken } = await GoogleSignin.getTokens();
-
     // ✅ Step 4: Create a Firebase credential using the Google ID token
     const googleCredential = GoogleAuthProvider.credential(idToken);
-
     // ✅ Step 5: Use the credential to sign in with Firebase Auth
-    console.log('✅ Google Sign-In successful');
-    console.log('userInfo:', userInfo); // Contains user details like email, name
-    console.log('googleCredential:', googleCredential); // Firebase-compatible credential
-
-    return signInWithCredential(getAuth(), googleCredential);
-
+    const userCredential = await signInWithCredential(getAuth(), googleCredential);
+    const user = userCredential.user;
+    console.log("✅ Google Sign-in complete:",  user.email);
   } catch (error:any) {
     if (error.code) {
       switch (error.code) {
@@ -63,25 +56,19 @@ async function signInWithApple() {
     requestedOperation: appleAuth.Operation.LOGIN,
     requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
   });
-
   // ✅ Step 2: Check if the identity token is returned
   if (!appleAuthRequestResponse.identityToken) {
     // This happens if the user cancels or something goes wrong
     throw new Error('Apple Sign-Up failed - no identify token returned');
   }
-
   // ✅ Step 3: Extract the identity token and nonce
   const { identityToken, nonce } = appleAuthRequestResponse;
-
   // ✅ Step 4: Create a Firebase credential using the Apple identity token
   const appleCredential = AppleAuthProvider.credential(identityToken, nonce);
-
   // ✅ Step 5: Use the credential to sign in with Firebase
-  console.log("Apple sign up complete");
-  console.log('appleAuthRequestResponse:', appleAuthRequestResponse)
-  console.log("appleCredential", appleCredential);
-  
-  return signInWithCredential(getAuth(), appleCredential);
+  const userCredential = await signInWithCredential(getAuth(), appleCredential);
+  const user = userCredential.user;
+  console.log("✅ Apple Sign-in complete:",  user.email);
   } catch (error:any) {
     if (error.code) {
       switch (error.code) {
