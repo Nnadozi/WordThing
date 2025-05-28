@@ -35,6 +35,18 @@ async function signUpWithGoogle() {
       email: user.email,
       accountType: 'google',
       createdAt: serverTimestamp(),
+      lastActive: null,
+      wordsLearned:0,
+      streak:{
+        current:0,
+        longest:0,
+        lastCompleted:null
+      },
+      subscription:{
+        isPro:false,
+        startedAt:null,
+        expiresAt: null
+      }
     });
   } catch (error:any) {
     if (error.code) {
@@ -78,10 +90,22 @@ async function signUpWithApple() {
   console.log("✅ Apple Sign-Up complete:", user.email);
   // ✅ Now safely write to Firestore
   await setDoc(doc(db, 'users', user.uid), {
-    id: user.uid,
-    email: user.email,
-    accountType: 'apple',
-    createdAt: serverTimestamp(),
+      id: user.uid,
+      email: user.email,
+      accountType: 'apple',
+      createdAt: serverTimestamp(),
+      lastActive: null,
+      wordsLearned:0,
+      streak:{
+        current:0,
+        longest:0,
+        lastCompleted:null
+      },
+      subscription:{
+        isPro:false,
+        startedAt:null,
+        expiresAt: null
+      }
   });
   } catch (error:any) {
     if (error.code) {

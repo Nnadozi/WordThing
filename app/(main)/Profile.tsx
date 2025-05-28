@@ -7,13 +7,23 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 
 const Profile = () => {
-  const {user, signOutUser} = useUser()
+  const {user, signOutUser,deleteAccount} = useUser()
   return (
     <Page>
       {
         user ? 
         <>
-          <MyText marginVertical={"3%"} bold textAlign='center'>Profile, {user.email}!</MyText>
+          <MyText bold textAlign='center'>Profile of {user.email}!</MyText>
+          <MyText>Current Streak: </MyText>
+          <MyText>Longest Streak: </MyText>
+          <MyText>Words Learned: </MyText>
+          <MyText>Learner since: </MyText>
+          <MyText bold textAlign='center'>Settings</MyText>
+          <MyText>Dark mode toggle</MyText>
+          <MyText>Notifications toggle</MyText>
+          <MyText>Language selection</MyText>
+          <MyText>Manage subscription</MyText>
+          <MyButton title='Delete Account' onPress={deleteAccount} />
           <MyButton title='Sign Out' onPress={signOutUser} />
         </>
         : 
@@ -29,3 +39,4 @@ const Profile = () => {
 export default Profile
 
 const styles = StyleSheet.create({})
+

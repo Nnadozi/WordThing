@@ -6,7 +6,9 @@ import { StyleSheet } from 'react-native'
 const Dictionary = () => {
   return (
     <Page>
-        <MyText>My Dictionary</MyText>
+        <MyText>Browse past words (signed in only)</MyText>
+        <MyText>Filter my date learned, part of speech, difficulty, etc</MyText>
+        <MyText>Make a list</MyText>
     </Page>
   )
 }

@@ -7,6 +7,7 @@ export default function OnboardingLayout() {
             <Stack.Screen name="Welcome"/>
             <Stack.Screen name="Breakdown"/>
             <Stack.Screen name="Personalize"/>
+            <Stack.Screen name="EnableNotifications"/>
             <Stack.Screen name="CreateAccount"/>
             <Stack.Screen name="Finish"/>
         </Stack>

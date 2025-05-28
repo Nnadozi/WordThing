@@ -5,15 +5,15 @@ import { router } from 'expo-router'
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
-const Personalize = () => {
+const EnableNotifications = () => {
   return (
     <Page>
-      <MyText>Personalize</MyText>
-      <MyButton title='Next' onPress={ () => router.push("/(onboard)/EnableNotifications")} />
+      <MyText>Enable Notifications</MyText>
+      <MyButton title='Next' onPress={ () => router.push("/(onboard)/CreateAccount")} />
     </Page>
   )
 }
 
-export default Personalize
+export default EnableNotifications
 
 const styles = StyleSheet.create({})
