@@ -1,16 +1,17 @@
-import MyButton from '@/components/MyButton'
-import MyText from '@/components/MyText'
-import Page from '@/components/Page'
+import OnboardingPage from '@/components/OnboardingPage'
 import { router } from 'expo-router'
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
 const Finish = () => {
   return (
-    <Page>
-      <MyText>Onboarding Finished</MyText>
-      <MyButton title='Go Main Nav' onPress={() => router.navigate('/(main)/Home')} />
-    </Page>
+    <OnboardingPage
+      title="Onboarding Finished"
+      subTitle="Enjoy using Termy!"
+      progress={1}
+      onPress={() => router.push("/(main)/Home")}>
+  
+    </OnboardingPage>
   )
 }
 

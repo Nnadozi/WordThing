@@ -14,6 +14,7 @@ const Profile = () => {
         user ? 
         <>
           <MyText bold textAlign='center'>Profile of {user.email}!</MyText>
+          <MyText>Display name: {user.displayName}</MyText>
           <MyText>Current Streak: </MyText>
           <MyText>Longest Streak: </MyText>
           <MyText>Words Learned: </MyText>
@@ -22,6 +23,8 @@ const Profile = () => {
           <MyText>Dark mode toggle</MyText>
           <MyText>Notifications toggle</MyText>
           <MyText>Language selection</MyText>
+          <MyText>Rate / Review on store</MyText>
+          <MyText>Feedback</MyText>
           <MyText>Manage subscription</MyText>
           <MyButton title='Delete Account' onPress={deleteAccount} />
           <MyButton title='Sign Out' onPress={signOutUser} />

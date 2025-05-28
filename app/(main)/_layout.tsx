@@ -5,12 +5,15 @@ import { Icon } from "react-native-paper";
 
 export default function MainLayout(){
     return(
-        <Tabs screenOptions={{headerTitleAlign: "center",headerTitleStyle: {fontFamily:"DMSans-Bold"}}}>
+        <Tabs screenOptions={{
+            headerTitleAlign: "center",headerTitleStyle: {fontFamily:"DMSans-Bold"},
+            tabBarActiveTintColor:"black",tabBarInactiveTintColor:"lightgray"
+            }}>
             <Tabs.Screen
             name="Dictionary"
             options={{
                 tabBarIcon: ({color}) => <Icon source={"book"} color={color} size={26} />,
-                title: "Dictionary",
+                title: "My Dictionary",
             }}
             />
             <Tabs.Screen 
@@ -22,7 +25,8 @@ export default function MainLayout(){
             <Tabs.Screen
             name="Profile"
             options={{
-                tabBarIcon: ({color}) => <FontAwesome5 color={color} name="user-alt" size={24} />
+                tabBarIcon: ({color}) => <FontAwesome5 color={color} name="user-alt" size={24} />,
+                title:"Profile & Settings"
             }}
             />
         </Tabs>

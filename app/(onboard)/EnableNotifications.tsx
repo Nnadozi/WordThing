@@ -1,16 +1,17 @@
-import MyButton from '@/components/MyButton'
-import MyText from '@/components/MyText'
-import Page from '@/components/Page'
+import OnboardingPage from '@/components/OnboardingPage'
 import { router } from 'expo-router'
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
 const EnableNotifications = () => {
   return (
-    <Page>
-      <MyText>Enable Notifications</MyText>
-      <MyButton title='Next' onPress={ () => router.push("/(onboard)/CreateAccount")} />
-    </Page>
+    <OnboardingPage
+      title="Enable Notifications"
+      subTitle="Get notified about new words and updates"
+      progress={0.6}
+      onPress={() => router.push("/(onboard)/CreateAccount")}>
+  
+    </OnboardingPage>
   )
 }
 

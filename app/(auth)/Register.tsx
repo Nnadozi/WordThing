@@ -33,6 +33,7 @@ async function signUpWithGoogle() {
     await setDoc(doc(db, 'users', user.uid), {
       id: user.uid,
       email: user.email,
+      displayName:null,
       accountType: 'google',
       createdAt: serverTimestamp(),
       lastActive: null,
@@ -48,6 +49,7 @@ async function signUpWithGoogle() {
         expiresAt: null
       }
     });
+    router.navigate('/NameScreen')
   } catch (error:any) {
     if (error.code) {
       switch (error.code) {
@@ -92,6 +94,7 @@ async function signUpWithApple() {
   await setDoc(doc(db, 'users', user.uid), {
       id: user.uid,
       email: user.email,
+      displayName:null,
       accountType: 'apple',
       createdAt: serverTimestamp(),
       lastActive: null,
@@ -107,6 +110,7 @@ async function signUpWithApple() {
         expiresAt: null
       }
   });
+   router.navigate('/NameScreen')
   } catch (error:any) {
     if (error.code) {
       switch (error.code) {
