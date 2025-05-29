@@ -28,9 +28,8 @@ export default function RootLayout() {
           <Stack.Screen name="(onboard)"/>
           <Stack.Screen name="(main)"/>
           <Stack.Screen name="(auth)"/>
-          <Stack.Screen name="NameScreen"/>
+          <Stack.Screen name="(settings)"/>
           <Stack.Screen name="WordQuiz"/>
-          <Stack.Screen name="Settings"/>
         </Stack>
       </PaperProvider>
     </UserProvider>

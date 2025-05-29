@@ -9,7 +9,10 @@ import { Checkbox } from 'react-native-paper'
 const Home = () => {
    const [checked, setChecked] = React.useState(false);
   return (
-    <Page>
+    <Page style={styles.con}>
+      <View style = {styles.topRow}>
+        <MyText fontSize='large' bold>Home</MyText>
+      </View>
       <MyText bold>Todays Word: Eloquent</MyText>
       <MyText textAlign="center">
         Definition: Fluent or persuasive in speaking or writing.
@@ -37,4 +40,15 @@ const Home = () => {
 
 export default Home
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    con:{
+    justifyContent:"flex-start",
+    alignItems:"flex-start",
+  },
+  topRow:{
+    flexDirection:"row",
+    alignItems:"center",
+    justifyContent:"space-between",
+    width:"100%",
+  }
+})

@@ -5,7 +5,7 @@ import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 type IconType = 'Entypo' | 'AntDesign' | 'Feather' | 'Ionicons' | 'MaterialIcons';
 
 interface MyIconProps {
-  name: any;
+  name: string;
   type?: IconType;
   size?: number;
   onPress?: () => void;

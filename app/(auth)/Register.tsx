@@ -49,7 +49,7 @@ async function signUpWithGoogle() {
         expiresAt: null
       }
     });
-    router.navigate('/NameScreen')
+    router.navigate('/(auth)/NameScreen')
   } catch (error:any) {
     if (error.code) {
       switch (error.code) {
@@ -110,7 +110,7 @@ async function signUpWithApple() {
         expiresAt: null
       }
   });
-   router.navigate('/NameScreen')
+   router.navigate('/(auth)/NameScreen')
   } catch (error:any) {
     if (error.code) {
       switch (error.code) {
@@ -133,7 +133,7 @@ async function signUpWithApple() {
 const Register = () => {
   return (
     <Page>
-      <MyIcon size={35} style={styles.icon} type='Ionicons' name={"chevron-back"} onPress={router.back} />
+      <MyIcon  style={styles.icon} type='Ionicons' name={"chevron-back"} onPress={router.back} />
       <Image resizeMode='contain' style={styles.img} source={require('../../assets/images/icon.png')} />
       <MyText fontSize='large' bold >Create an Account</MyText>
       <View style = {styles.buttonColumn}>

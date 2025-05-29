@@ -7,7 +7,7 @@ export default function MainLayout(){
     return(
         <Tabs screenOptions={{
             headerTitleAlign: "center",headerTitleStyle: {fontFamily:"DMSans-Bold"},
-            tabBarActiveTintColor:"black",tabBarInactiveTintColor:"lightgray"
+            tabBarActiveTintColor:"black",tabBarInactiveTintColor:"lightgray", headerShown:false
             }}>
             <Tabs.Screen
             name="Dictionary"
@@ -26,7 +26,7 @@ export default function MainLayout(){
             name="Profile"
             options={{
                 tabBarIcon: ({color}) => <FontAwesome5 color={color} name="user-alt" size={24} />,
-                title:"Profile & Settings"
+                title:"Profile"
             }}
             />
         </Tabs>
