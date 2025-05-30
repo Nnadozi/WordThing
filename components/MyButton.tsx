@@ -22,7 +22,8 @@ const MyButton = ({mode = 'contained', onPress, title, style, marginVertical, ic
     children={title}
     labelStyle={{fontFamily: "DMSans-Bold", fontSize: 16}}
     style={[style,{marginVertical:marginVertical, padding:"1%",borderRadius: 100}]}
-    buttonColor='black'
+    buttonColor={ mode != 'text' ? "black" : undefined}
+    textColor={mode != 'text' ? undefined : "black"}
     />
   )
 }

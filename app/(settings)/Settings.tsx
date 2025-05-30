@@ -40,7 +40,7 @@ function renderSetting(optionName: string, onPress: () => void) {
     <TouchableOpacity onPress={onPress} key={optionName} style={styles.optionCon}>
       <View style={styles.labelRow}>
         <MyIcon name={iconMap[optionName]} type="Ionicons" size={20}/>
-        <MyText style={styles.optionLabel} fontSize="normal" bold>
+        <MyText style={{marginLeft:10}} fontSize="normal" bold>
           {optionName}
         </MyText>
       </View>
@@ -74,15 +74,14 @@ const styles = StyleSheet.create({
   con: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    padding: 16,
-    gap: 12,
+    gap: 20,
   },
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    marginBottom: 24,
+    marginBottom:"5%"
   },
   optionCon: {
     alignItems: 'center',
@@ -96,8 +95,5 @@ const styles = StyleSheet.create({
   labelRow: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  optionLabel: {
-    marginLeft: 12,
-  },
+  }
 })
