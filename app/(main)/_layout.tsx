@@ -1,3 +1,4 @@
+import MyIcon from '@/components/MyIcon';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { Tabs } from "expo-router";
 import React from "react";
@@ -20,6 +21,12 @@ export default function MainLayout(){
             name="Home"
             options={{
                 tabBarIcon: ({color}) => <Icon source={"home"} color={color} size={30} />,
+            }}
+            />
+            <Tabs.Screen 
+            name="Swipe"
+            options={{
+                tabBarIcon: ({color}) => <MyIcon name={"swipe"} type='MaterialIcons' color={color} size={30} />,
             }}
             />
             <Tabs.Screen

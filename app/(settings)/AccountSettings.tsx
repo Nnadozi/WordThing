@@ -6,6 +6,7 @@ import { useUser } from '@/context/UserContext'
 import { router } from 'expo-router'
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
+import { Avatar } from 'react-native-paper'
 
 const AccountSettings = () => {
   const {user, userDoc, signOutUser, deleteAccount} = useUser()
@@ -32,7 +33,8 @@ const AccountSettings = () => {
       {
         user ?
       <View style = {{width:"100%",gap:20}}>
-         <MyText bold>DisTplay Name</MyText>
+        <Avatar.Text size={125} label={user.displayName[0]} style={{backgroundColor:"black",alignSelf:"center"}} />
+        <MyText bold>DisTplay Name</MyText>
         <View style = {styles.row}>
           <MyText>{user.displayName}</MyText>
           <MyText bold onPress={() => router.replace("/(auth)/NameScreen")}>Update</MyText>

@@ -35,7 +35,7 @@ async function signUpWithGoogle() {
     if (!docSnap.exists()) {
       // New user: create Firestore doc and go to NameScreen
       await setDoc(userDocRef, {
-        id: user.uid,
+        uid: user.uid,
         email: user.email,
         displayName: null,
         authType: 'google',
@@ -86,7 +86,7 @@ async function signUpWithApple() {
     if (!docSnap.exists()) {
       // New user: create Firestore doc and go to NameScreen
       await setDoc(userDocRef, {
-        id: user.uid,
+        uid: user.uid,
         email: user.email,
         displayName: null,
         authType: 'apple',

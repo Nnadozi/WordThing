@@ -14,13 +14,13 @@ const Home = () => {
         <MyText fontSize='large' bold>Home</MyText>
       </View>
       <MyText bold>Todays Word: Eloquent</MyText>
-      <MyText textAlign="center">
+      <MyText>
         Definition: Fluent or persuasive in speaking or writing.
       </MyText>
-      <MyText textAlign="center">
+      <MyText>
         Part of speech: Adjective
       </MyText>
-      <MyText textAlign="center">
+      <MyText>
         Example sentence: The professor gave an eloquent speech that inspired everyone in the audience.
       </MyText>
       <MyText>pronunciation</MyText>
@@ -50,5 +50,6 @@ const styles = StyleSheet.create({
     alignItems:"center",
     justifyContent:"space-between",
     width:"100%",
+    marginBottom:"5%"
   }
 })

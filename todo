@@ -1,0 +1,78 @@
+<===============================================================>
+To do
+<===============================================================>
+- Test number vs percentage-based styles (e.g., accuracy or completion rate)
+- Have the user set displayName if they are signing in for the first time (only shows when signing up)
+- Make a new build with: react-native-toast-message, react-native-pager-viewer
+- Display name filter
+- Double-confirmation for account deletion
+- Sign-out confirmation
+- PFP system
+- Implement NativeWind
+- Text overflow handling
+- Add some cool animations
+- Daily use system and heatmap (update Firebase doc schema)
+- lastActive logic
+- Merge user and userDoc?
+- Work on swipeMode
+
+<===============================================================>
+Bug Fixes 
+<===============================================================>
+- Fix Android auth (Apple fails)
+- Try Google Jules (for app testing before launch) to fix Firebase and navigation issues.
+
+<===============================================================>
+Plans
+<===============================================================>
+Premium Subscription:
+- Unlimited swipes
+- Custom word lists (SAT, LSAT, etc)
+- No ads
+
+<===============================================================>
+References
+<===============================================================>
+user auth object:
+{
+    "uid": "abc123UID",
+    "email": "user@example.com",
+    "emailVerified": false,
+    "displayName": "John Doe",
+    "photoURL": "https://example.com/john.jpg",
+    "isAnonymous": false,
+    "providerData": [
+      {
+        "providerId": "password",
+        "uid": "user@example.com",
+        "displayName": "John Doe",
+        "email": "user@example.com",
+        "photoURL": "https://example.com/john.jpg"
+      }
+    ],
+    "metadata": {
+      "creationTime": "Fri, 30 May 2025 14:48:00 GMT",
+      "lastSignInTime": "Fri, 30 May 2025 15:10:00 GMT"
+    }
+},
+
+userDoc document
+{
+    "uid": "abc123UID",
+    "email": "user@example.com",
+    "displayName": null,
+    "authType": "google",
+    "createdAt": "serverTimestamp()",
+    "lastActive": null,
+    "wordsLearned": 0,
+    "streak": {
+      "current": 0,
+      "longest": 0,
+      "lastCompleted": null
+    },
+    "subscription": {
+      "isPro": false,
+      "startedAt": null,
+      "expiresAt": null
+    }
+}
