@@ -9,7 +9,7 @@ import { StyleSheet, View } from 'react-native'
 
 
 const Profile = () => {
-  const {user, signOutUser,deleteAccount} = useUser()
+  const {user} = useUser()
   return (
     <Page style={styles.con}>
       <View style = {styles.topRow}>
@@ -25,13 +25,11 @@ const Profile = () => {
           <MyText>Longest Streak: </MyText>
           <MyText>Words Learned: </MyText>
           <MyText>Learner since: </MyText>
-          <MyButton title='Delete Account' onPress={deleteAccount} />
-          <MyButton title='Sign Out' onPress={signOutUser} />
         </>
         : 
         <View style = {styles.centeredView}>
             <MyText marginVertical={"3%"} bold textAlign='center'>Sign in to view your profile</MyText>
-            <MyButton title='Log in' onPress={() => router.navigate('/(auth)/Login')} />
+            <MyButton title='Sign in' onPress={() => router.navigate('/(auth)/Authenticate')} />
         </View>
       }
     </Page>

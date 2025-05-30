@@ -5,7 +5,7 @@ import Page from '@/components/Page'
 import { useUser } from '@/context/UserContext'
 import { getAuth, updateProfile } from '@react-native-firebase/auth'
 import { doc, getFirestore, updateDoc } from '@react-native-firebase/firestore'
-import { router } from 'expo-router'
+import { router, useLocalSearchParams } from 'expo-router'
 import React, { useState } from 'react'
 import { Alert, StyleSheet } from 'react-native'
 
@@ -13,8 +13,9 @@ const NameScreen = () => {
   const [displayName, setDisplayName] = useState('')
   const [loading, setLoading] = useState(false)
   const db = getFirestore()
-  const { user, refreshUser } = useUser()
-
+  const { user, refreshUser, userDoc } = useUser()
+  const {isNew} = useLocalSearchParams()
+  
   async function handleSetName() {
     const trimmedName = displayName.trim()
     try {
@@ -33,8 +34,11 @@ const NameScreen = () => {
       await refreshUser()
 
       console.log(`✅ Display name successfully set as ${trimmedName}`)
-      Alert.alert('Account Creation Complete', `Welcome to Termy, ${trimmedName}!`)
-      router.navigate('/(main)/Home')
+      {isNew ?
+      Alert.alert('Welcome to Termy', `Enjoy your stay, ${trimmedName}!`)
+      : Alert.alert('Name updated', `Display name updated to ${trimmedName}!`)
+      }
+      router.replace('/(main)/Home')
     } catch (error) {
       console.error('❌ Error setting display name:', error)
       Alert.alert('Error', 'Something went wrong while setting your display name.')

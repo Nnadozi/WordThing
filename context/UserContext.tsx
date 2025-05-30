@@ -5,24 +5,45 @@ import {
   doc,
   getDoc,
   getFirestore,
+  Timestamp
 } from '@react-native-firebase/firestore'
-import { createContext, useContext, useEffect, useState } from 'react'
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { Alert } from 'react-native'
 
 const auth = getAuth(getApp())
 const db = getFirestore()
 
-const UserContext = createContext(null)
+interface UserDocType {
+  authType: string
+  createdAt: Timestamp
+  [key: string]: any
+}
 
-export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
-  const [userDoc, setUserDoc] = useState(null)
+interface UserContextType {
+  user: any
+  userDoc: UserDocType | null
+  signOutUser: () => Promise<void>
+  deleteAccount: () => Promise<void>
+  refreshUser: () => Promise<void>
+}
 
-  const fetchUserDoc = async (uid) => {
+const UserContext = createContext<UserContextType | null>(null)
+
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<any| null>(null)
+  const [userDoc, setUserDoc] = useState<UserDocType | null>(null)
+
+  const fetchUserDoc = async (uid: string) => {
     const docRef = doc(db, 'users', uid)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
-      setUserDoc(docSnap.data())
+      setUserDoc(docSnap.data() as UserDocType)
     } else {
       console.warn('User document not found in Firestore.')
       setUserDoc(null)
@@ -79,7 +100,7 @@ export const UserProvider = ({ children }) => {
               await deleteDoc(doc(db, 'users', currentUser.uid))
               await currentUser.delete()
               console.log(`User account ${currentUser.email} deleted successfully`)
-            } catch (error) {
+            } catch (error: any) {
               if (error.code === 'auth/requires-recent-login') {
                 Alert.alert('Please sign in again to delete your account.')
               } else {
@@ -102,4 +123,10 @@ export const UserProvider = ({ children }) => {
   )
 }
 
-export const useUser = () => useContext(UserContext)
+export const useUser = (): UserContextType => {
+  const context = useContext(UserContext)
+  if (!context) {
+    throw new Error('useUser must be used within a UserProvider')
+  }
+  return context
+}

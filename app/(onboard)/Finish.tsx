@@ -9,7 +9,7 @@ const Finish = () => {
       title="Onboarding Finished"
       subTitle="Enjoy using Termy!"
       progress={1}
-      onPress={() => router.push("/(main)/Home")}>
+      onPress={() => router.replace("/(main)/Home")}>
   
     </OnboardingPage>
   )

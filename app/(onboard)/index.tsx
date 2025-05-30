@@ -11,9 +11,9 @@ const Welcome = () => {
       <Image resizeMode='contain' style={styles.img} source={require('../../assets/images/icon.png')} />
       <MyText bold fontSize='large'>Welcome to Termly</MyText>
       <MyText>A smarter word a day That's all it takes.</MyText>
-      <MyButton marginVertical={"3%"}  title='Get Started' onPress={ () => router.push('/(onboard)/Breakdown')} />
+      <MyButton marginVertical={"3%"}  title='Get Started' onPress={ () => router.navigate('/(onboard)/Breakdown')} />
       <MyText fontSize='small'>Already have an account? 
-        <MyText onPress={() => router.push('/(auth)/Login')} fontSize='small' color='primary' bold> Login</MyText>
+        <MyText onPress={() => router.navigate('/(auth)/Authenticate')} fontSize='small' color='primary' bold> Login</MyText>
       </MyText>
     </Page>
   )

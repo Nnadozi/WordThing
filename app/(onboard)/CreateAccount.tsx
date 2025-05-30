@@ -9,7 +9,7 @@ const CreateAccount = () => {
       title="Create Account"
       subTitle="Save your progress and preferences"
       progress={0.8}
-      onPress={() => router.push("/(onboard)/Finish")}>
+      onPress={() => router.navigate("/(onboard)/Finish")}>
   
     </OnboardingPage>
   )

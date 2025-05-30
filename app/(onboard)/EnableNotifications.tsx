@@ -9,7 +9,7 @@ const EnableNotifications = () => {
       title="Enable Notifications"
       subTitle="Get notified about new words and updates"
       progress={0.6}
-      onPress={() => router.push("/(onboard)/CreateAccount")}>
+      onPress={() => router.navigate("/(onboard)/CreateAccount")}>
   
     </OnboardingPage>
   )

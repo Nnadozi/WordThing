@@ -9,7 +9,7 @@ const Breakdown = () => {
       title="Breakdown"
       subTitle="Here's how Termy works"
       progress={0.2}
-      onPress={() => router.push("/(onboard)/Personalize")}>
+      onPress={() => router.navigate("/(onboard)/Personalize")}>
   
     </OnboardingPage>
   )

@@ -9,7 +9,7 @@ const Personalize = () => {
       title="Personalize"
       subTitle="What words do you want to see?"
       progress={0.4}
-      onPress={() => router.push("/(onboard)/EnableNotifications")}>
+      onPress={() => router.navigate("/(onboard)/EnableNotifications")}>
   
     </OnboardingPage>
   )

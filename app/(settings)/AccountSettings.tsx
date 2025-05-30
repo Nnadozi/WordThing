@@ -1,3 +1,4 @@
+import MyButton from '@/components/MyButton'
 import MyIcon from '@/components/MyIcon'
 import MyText from '@/components/MyText'
 import Page from '@/components/Page'
@@ -7,8 +8,8 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
 const AccountSettings = () => {
-  const {user, userDoc} = useUser()
-  const createdAtTimestamp = user ? userDoc.createdAt : null;
+  const {user, userDoc, signOutUser, deleteAccount} = useUser()
+  const createdAtTimestamp = user && userDoc ? userDoc.createdAt : null;
   let formattedDate;
   if (createdAtTimestamp) {
     const createdAtDate = createdAtTimestamp.toDate();  
@@ -31,14 +32,25 @@ const AccountSettings = () => {
       {
         user ?
       <View style = {{width:"100%",gap:20}}>
-        <MyText bold>Display Name</MyText>
-        <MyText>{user.displayName}</MyText>
+         <MyText bold>DisTplay Name</MyText>
+        <View style = {styles.row}>
+          <MyText>{user.displayName}</MyText>
+          <MyText bold onPress={() => router.replace("/(auth)/NameScreen")}>Update</MyText>
+        </View>
         <MyText bold>Email Address</MyText>
         <MyText>{user.email}</MyText>
         <MyText bold>Authentication Type </MyText>
-        <MyText>{userDoc.authType[0].toUpperCase() + userDoc.authType.slice(1)}</MyText>
+        <MyText>
+          {userDoc && userDoc.authType
+            ? userDoc.authType[0].toUpperCase() + userDoc.authType.slice(1)
+            : 'Unknown'}
+        </MyText>
         <MyText bold>Date Joined</MyText>
         <MyText>{formattedDate}</MyText>
+        <View style = {{gap:10, marginTop:"5%"}}>
+          <MyButton title='Sign out' onPress={signOutUser} />
+          <MyButton title='Delete Account' onPress={deleteAccount} />
+        </View>
       </View>
       : 
         <View style = {styles.centeredView}>
@@ -72,7 +84,7 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     alignItems:"center",
     justifyContent:"space-between",
-    width:"100%"
+    width:"100%",
   },
   centeredView:{
     flex:1,
